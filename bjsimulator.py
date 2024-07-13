@@ -7,6 +7,8 @@ import random
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+# File that csv created by sim will be saved to
+CSV_NAME = 'blackjackdatacount_smart5k.csv'
 
 def run_sim(players, num_decks, simulations, strategy):
     #first, let's make a shoe
@@ -625,7 +627,7 @@ def run_sim(players, num_decks, simulations, strategy):
     (model_df.info())
     print(model_df.describe())
     #write the data to a csv file, in case we want to refer to it later
-    model_df.to_csv('blackjackdatacount_smart10k.csv')
+    model_df.to_csv(CSV_NAME)
 
 
 # Sim customization and running
