@@ -3,15 +3,18 @@ import pandas as pd
 import random
 import matplotlib.pyplot as plt
 import seaborn as sns
+import os
 
 # Config
 strategy = 'count_smart'
-simulations = '10k'
+simulations = '20k'
+file_path = f'sims_csvs/blackjackdata{strategy}{simulations}.csv'
 
 try:
-    df = pd.read_csv(f'blackjack/sims_csvs/blackjackdata{strategy}{simulations}.csv')
+    df = pd.read_csv(file_path)
+    print("File loaded successfully.")
 except FileNotFoundError:
-    print(f'The CSV file blackjackdata{strategy}{simulations}.csv was not found.\n')
+    print(f'The CSV file {file_path} was not found.\n')
 
 def win_vs_p_odds():
     p_odds_buckets = ['0-.1', '.1-.2', '.2-.3', '.3-.4', '.4-.5', '.5-.6', '.6-.7', '.7-.8', '.8-.9', '.9-1']
